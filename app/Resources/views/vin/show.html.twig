@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<center>
+    <h1>Vin</h1>
+
+    <table border='4' width='40%' height='30%' >
+        <tbody>
+            <tr>
+                <th>Idvin</th>
+                <td>{{ vin.idVin }}</td>
+            </tr>
+            <tr>
+                <th>Nomvin</th>
+                <td>{{ vin.nomVin }}</td>
+            </tr>
+            <tr>
+                <th>Typevin</th>
+                <td>{{ vin.typeVin }}</td>
+            </tr>
+            <tr>
+                <th>Idappellation</th>
+                <td>{{ vin.idAppellation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('vin_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('vin_edit', { 'idVin': vin.idVin }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+    </center>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <center>
+    <h1>Origine</h1>
+
+
+    <table border='4' width='40%' height='30%'>
+        <tbody>
+            <tr>
+                <th>Idappellation</th>
+                <td>{{ origine.idAppellation }}</td>
+            </tr>
+            <tr>
+                <th>Nomappellation</th>
+                <td>{{ origine.nomAppellation }}</td>
+            </tr>
+            <tr>
+                <th>Region</th>
+                <td>{{ origine.region }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <ul>
+        <li>
+            <a href="{{ path('origine_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('origine_edit', { 'idAppellation': origine.idAppellation }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+
+    </center>
+{% endblock %}

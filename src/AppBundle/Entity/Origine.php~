@@ -1,0 +1,40 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Origine
+ *
+ * @ORM\Table(name="origine")
+ * @ORM\Entity
+ */
+class Origine
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_appellation", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idAppellation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_appellation", type="string", length=30, nullable=false)
+     */
+    private $nomAppellation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="region", type="string", length=30, nullable=false)
+     */
+    private $region;
+
+
+}
+

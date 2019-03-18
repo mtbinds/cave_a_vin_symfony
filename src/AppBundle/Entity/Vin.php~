@@ -1,0 +1,47 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Vin
+ *
+ * @ORM\Table(name="vin", indexes={@ORM\Index(name="id_appellation", columns={"id_appellation"})})
+ * @ORM\Entity
+ */
+class Vin
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_vin", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idVin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_vin", type="string", length=30, nullable=false)
+     */
+    private $nomVin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type_vin", type="string", length=15, nullable=true)
+     */
+    private $typeVin;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_appellation", type="integer", nullable=false)
+     */
+    private $idAppellation;
+
+
+}
+

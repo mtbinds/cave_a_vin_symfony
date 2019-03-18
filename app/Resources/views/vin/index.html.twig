@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}<center>
+    <h1>Vins list</h1>
+
+    <table border='4' width='40%' height='30%' >
+        <thead>
+            <tr>
+                <th>Idvin</th>
+                <th>Nomvin</th>
+                <th>Typevin</th>
+                <th>Idappellation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vin in vins %}
+            <tr>
+                <td><a href="{{ path('vin_show', { 'idVin': vin.idVin }) }}">{{ vin.idVin }}</a></td>
+                <td>{{ vin.nomVin }}</td>
+                <td>{{ vin.typeVin }}</td>
+                <td>{{ vin.idAppellation }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('vin_show', { 'idVin': vin.idVin }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('vin_edit', { 'idVin': vin.idVin }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('vin_new') }}">Create a new vin</a>
+        </li>
+    </ul>
+    </center>
+{% endblock %}

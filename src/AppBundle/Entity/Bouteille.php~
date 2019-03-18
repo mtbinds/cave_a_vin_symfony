@@ -1,0 +1,62 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Bouteille
+ *
+ * @ORM\Table(name="bouteille")
+ * @ORM\Entity
+ */
+class Bouteille
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_vin", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $idVin;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="millesime", type="integer", nullable=false)
+     * @ORM\id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $millesime;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prix", type="float", precision=10, scale=0, nullable=true)
+     */
+    private $prix;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="quantite", type="integer", nullable=false)
+     */
+    private $quantite;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="note", type="integer", nullable=true)
+     */
+    private $note;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_note", type="date", nullable=true)
+     */
+    private $dateNote;
+
+
+}
